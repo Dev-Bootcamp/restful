@@ -4,7 +4,10 @@
   <table>
     <tr><th>Notes</th><th>Written by</th></tr>
     <% Note.all.each do |note| %>
-      <tr><td><%= note.title %></td><td><%= User.find(note.user_id).name %></td></tr>
+      <tr><td><a href="/note/<%= note.id %>"><%= note.title %></a></td><td><a href="/user/<%= note.user_id %>"><%= User.find(note.user_id).name %></a></td></tr>
     <% end %>
   </table>
+
+  <a href="/new"><button>Create New Note</button></a>
+
 </div>

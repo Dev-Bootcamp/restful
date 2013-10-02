@@ -1,0 +1,10 @@
+<div class='container'>
+  <form action='/update' method='POST'>
+    <input type='hidden' name='note_id' value='<%= @note.id %>'>
+    <label value='Name'><input type='text' required name='name' value='<%= @user.name %>' placeholder='enter your name'></label><br>
+    <label value='Title'><input type='text' required name='title' value='<%= @note.title %>' placeholder='enter the title'></label><br>
+    <label value='Note'><textarea required name='content' placeholder='enter your note'><%= @note.content %></textarea></label><br>
+    <input type='submit' value='Update Your Note'>
+  </form>
+  <a href='/delete/<%= @note.id %>'><button>Delete This Note</button></a>
+</div>
